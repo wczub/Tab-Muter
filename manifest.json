@@ -1,0 +1,39 @@
+{
+ "manifest_version": 2,
+ "name": "Tab Muter",
+ "description": "Mute tabs with the audio icon again.",
+ "version": "1",
+ "author": "Will Czubiak",
+ "options_page": "options.html",
+
+ "browser_action": {
+//    "default_popup": "popup.html",
+   "default_title": "Log to console"
+ },
+ "commands": {
+	"_execute_browser_action": {
+		"suggested_key": {
+			"default": "Ctrl+Space"
+		}
+	} 
+ },
+ "content_scripts": [
+  {
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["content.js"],
+	"run_at": "document_end"
+  }
+],
+ "background": {
+    "scripts": [
+        "background.js"
+        ],
+	"peristent": false
+ },
+ "permissions": [
+    "tabs",
+	"activeTab"
+]
+}
