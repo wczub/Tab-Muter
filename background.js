@@ -1,3 +1,4 @@
+
 chrome.browserAction.onClicked.addListener(function(tab) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
 		var tab = tabs[0]
@@ -16,5 +17,4 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		console.log(tab.mutedInfo);
 		
 	});
-    
 })
